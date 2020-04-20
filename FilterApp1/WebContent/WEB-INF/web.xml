@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE xml>
+
+<web-app>
+<!-- Whenever we have servlet & filter programs with url-pattern in web.xml then filter program will have higher priority than 
+     servlet program. So first, filter program will execute and then through a call to FiltetChianObject.doFilter() method
+     in  doFilter() mehtod in filter program control will passed to servlet program with same url-pattern-->
+     
+	<servlet>
+		<servlet-name>WelcomeServlet</servlet-name>
+		<servlet-class>test.WelcomeServlet</servlet-class>
+	</servlet>
+		<servlet-mapping>
+		<servlet-name>WelcomeServlet</servlet-name>
+		<url-pattern>/log</url-pattern>
+	</servlet-mapping>
+
+<!-- After submitting, request will come here search for /log, because <filter> tag has higher priority than <servlet> tag -->	
+	<filter>
+		<filter-name>LoginFilter</filter-name>
+		<filter-class>test.LoginFilter</filter-class>
+	</filter>
+	<filter-mapping>
+		<filter-name>LoginFilter</filter-name>
+		<url-pattern>/log</url-pattern>
+	</filter-mapping>
+		
+	<welcome-file-list>
+		<welcome-file>Login.html</welcome-file>
+	</welcome-file-list>
+</web-app>

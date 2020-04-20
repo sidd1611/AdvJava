@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE xml>
+<web-app>
+	<context-param>
+		<param-name>a</param-name>
+		<param-value>100</param-value>
+	</context-param>
+	<context-param>
+		<param-name>b</param-name>
+		<param-value>200</param-value>
+	</context-param>
+	
+	<filter>
+		<filter-name>DisFilter</filter-name>
+		<filter-class>test.DisFilter</filter-class>
+		
+		<init-param>
+			<param-name>c</param-name>
+			<param-value>300</param-value>
+		</init-param>
+		
+		<init-param>
+			<param-name>d</param-name>
+			<param-value>400</param-value>
+		</init-param>
+	</filter>
+	
+	<filter-mapping>
+		<filter-name>DisFilter</filter-name>
+		<url-pattern>/dis</url-pattern>
+	</filter-mapping>
+	
+	<welcome-file-list>
+		<welcome-file>input.html</welcome-file>
+	</welcome-file-list>
+	
+</web-app>
