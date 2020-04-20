@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE xml>
+<web-app>
+
+	<context-param>
+		<param-name>a</param-name>
+		<param-value>200</param-value>
+	</context-param>
+	
+	<servlet>
+		<servlet-name>Display</servlet-name>
+		<jsp-file>/Display.jsp</jsp-file>
+			<init-param>
+				<param-name>b</param-name>
+				<param-value>400</param-value>
+			</init-param>
+	</servlet>
+	
+	<servlet-mapping>
+		<servlet-name>Display</servlet-name>
+		<url-pattern>/dis</url-pattern>
+	</servlet-mapping>
+
+	<welcome-file-list>
+		<welcome-file>input.html</welcome-file>
+	</welcome-file-list>
+	
+</web-app>
